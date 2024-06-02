@@ -17,18 +17,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
     if (*head == NULL)
         return (-1);
 
-    // Traverse to the node at the given index
     while (current != NULL && count < index)
     {
         current = current->next;
         count++;
     }
 
-    // If the index is out of range
     if (current == NULL)
         return (-1);
 
-    // If the node to be deleted is the head
     if (current == *head)
     {
         *head = current->next;
